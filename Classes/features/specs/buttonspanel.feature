@@ -5,10 +5,13 @@ Feature: Validate the painel buttons
   So I can validate the buttons, select and check boxes
   To assure they work in the buttons panel as expected
 
+  Background: Access website
+    Given I load the website "http://www.vilasboasit.com/tests.html"
+      And I am on buttons panel
+
   @buttons
   Scenario: Validate the buttons
 
-    Given I am on buttons panel
     When I click on button "ONE"
       And I click on button "TWO"
       And I click on button "THREE"
@@ -18,7 +21,6 @@ Feature: Validate the painel buttons
   @rbuttons
   Scenario: Validate the reset button
 
-    Given I am on buttons panel
     When I click on button "ONE"
       And I click on button "TWO"
       And I click on button "THREE"
@@ -29,7 +31,6 @@ Feature: Validate the painel buttons
   @sbox
   Scenario: Successfully select option
 
-    Given I am on buttons panel
     When I choose the "ExampleOne" option
       And I choose the "ExampleTwo" option
       And I choose the "ExampleThree" option
@@ -38,7 +39,6 @@ Feature: Validate the painel buttons
   @cbox
   Scenario: Successfully checkbox
 
-    Given I am on buttons panel
     When I check the "OptionOne" checkbox
       And I check the "OptionTwo" checkbox
       And I check the "OptionThree" checkbox

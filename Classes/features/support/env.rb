@@ -15,6 +15,12 @@ require 'site_prism'
 World(Capybara::DSL)
 World(Capybara::RSpecMatchers)
 
+#System.setProperty("webdriver.gecko.driver", "C:/geckodriver.exe");
+#driver = new FirefoxDriver();
+#driver.get("http://vilasboasit.com/tests.html");
+
+#Selenium::WebDriver::Firefox::Binary.path='C:\Program Files\Mozilla Firefox\firefox.exe'
+
 if ENV['chrome']
   Capybara.default_driver = :chrome
   Capybara.register_driver :chrome do |app|

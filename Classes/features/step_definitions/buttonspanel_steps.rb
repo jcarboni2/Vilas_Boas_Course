@@ -20,13 +20,21 @@ When(/^I click on button "([^"]*)"$/) do |button|
   else button == "RESET BUTTONS"
     @buttons.reset_button.click
   end
+  #find('#panel_body_one button[class$="lg btn-default"]').click
+  #click_button if text = button
+  #find('div[class$=text-center] #btn_one').click
+  #click_button button
+  #find('button').click
 end
 
 When(/^I choose the "([^"]*)" option$/) do |op|
+  #puts verify = op
   select(op, from:"select_box")
 end
 
 When(/^I check the "([^"]*)" checkbox$/) do |checkbox|
+  #puts value @buttons.checkbox_one.text
+  #check("value")
   check(checkbox)
 end
 
@@ -36,13 +44,23 @@ Then(/^I expect no button to be visible$/) do
   assert_no_selector("#btn_one")
   assert_no_selector("#btn_two")
   assert_no_selector("#btn_three")
+  #expect(page).to have_css('#btn_one', visible: :hidden)
+  #expect(page).not_to have_css('#btn_three')
+  #find(:css, "#btn_three").should be_visible
+  #assert_no_selector("btn_one")
+  #find("#btn_one").should_not be_visible
 end
 
 Then(/^link "([^"]*)" should be presented$/) do |link|
+  #sleep(5)
   assert_selector("#btn_link")
+  #expect(page).to have_css('#btn_link')
+  #expect(page).to have_css("btn_link:enabled")
+  #find(:css, "#btn_link").should be_visible
 end
 
 Then(/^I expect all buttons presented$/) do
+  #expect(page).to have_css('#btn_one')
   assert_selector("#btn_one")
   assert_selector("#btn_two")
   assert_selector("#btn_three")

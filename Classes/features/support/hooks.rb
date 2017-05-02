@@ -1,11 +1,15 @@
 #require 'selenium-webdriver'
 
 Before do
-  @home = HomePage.new
-  @home.load
+  #visit "http://www.vilasboasit.com/tests.html"
+  # @home = HomePage.new
+  # @home.load
   @buttons = ButtonsPage.new
   @fields = FieldsPage.new
   @images = ImagesPage.new
   @ibuttons = IbuttonsPage.new
   @ifields = IfieldsPage.new
 end
+
+#After do
+#end
