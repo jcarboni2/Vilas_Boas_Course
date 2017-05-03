@@ -1,9 +1,5 @@
 
 
-# class HomePage < SitePrism::Page
-#   set_url "http://www.vilasboasit.com/tests.html"
-# end
-
 class ButtonsPage < SitePrism::Page
   element :buttons_panel, '#panel_heading_one #heading_one'
   element :button_one, '#panel_body_one #btn_one'
