@@ -6,9 +6,8 @@ Given(/^I am on fields panel$/) do
   expect(@fields.fields_panel.text).to eql 'FIELDS'
 end
 
-
-Given(/^I fill the YourFirtName field in with "([^"]*)"$/) do |value|
-  fill_in :placeholder => "YourFirstName", :with => value
+Given(/^I fill the YourFirstName field in with "([^"]*)"$/) do |field|
+  fill_in :placeholder => "YourFirstName", :with => field
 end
 
 #Action

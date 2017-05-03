@@ -30,7 +30,7 @@ When(/^I check the "([^"]*)" checkbox$/) do |checkbox|
   check(checkbox)
 end
 
-#Expected Result
+#Expected Results
 
 Then(/^I expect no button to be visible$/) do
   assert_no_selector("#btn_one")

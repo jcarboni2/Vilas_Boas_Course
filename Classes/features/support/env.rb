@@ -1,19 +1,12 @@
 require 'rspec'
 require 'page-object'
-#This two parameters below load and call a specific gem version.
-#gem 'selenium-webdriver', '=2.53.4'
 require 'selenium-webdriver'
-#require 'capybara/cucumber'
-require 'capybara/dsl'
-require 'capybara/rspec/matchers'
+require 'capybara/cucumber'
 require 'faker'
 require 'pry'
 require 'yaml'
 require 'capybara/poltergeist'
 require 'site_prism'
-
-World(Capybara::DSL)
-World(Capybara::RSpecMatchers)
 
 if ENV['chrome']
   Capybara.default_driver = :chrome
@@ -40,8 +33,7 @@ elsif ENV['headless']
   Capybara.javascript_driver = :poltergeist
   Capybara.default_driver = :poltergeist
 else
-  #Capybara.default_driver = :selenium
-  Selenium::WebDriver::Firefox::Binary.path='C:\geckodriver.exe'
+  Capybara.default_driver = :selenium
 end
 
 Capybara.default_max_wait_time = 5
