@@ -13,11 +13,17 @@ end
 #Action
 
 When(/^I click on "([^"]*)" button$/) do |button|
+  #find('#reset_fields').click
   @fields.reset_fields.click
 end
 
 #Expected Result
 
 Then(/^I expect the "([^"]*)" is empty$/) do |field|
+  # value = find(field).value
+  # if value == ""
+  # else
+  #   raise "field not empty"
+  # end
   raise "field not empty" if find(field).value != ""
 end

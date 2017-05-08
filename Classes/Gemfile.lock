@@ -93,7 +93,7 @@ GEM
       websocket (~> 1.0)
     slop (3.6.0)
     watir (6.2.1)
-      selenium-webdriver (3.2.2)
+      selenium-webdriver (>=2.53.4, <=3.2.2)
     websocket (1.2.4)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)

@@ -1,1 +1,13 @@
-default: --no-source --color --format pretty
+#default: --no-source --color --format pretty
+
+## YAML template
+---
+#pretty: --format pretty
+default: --format progress -p html -p poltergeist
+html: --format html --out=results/reports.html
+json: --format json --out=results/reports.json
+doc: --format doc
+smoke: --format progress --tag @smoke -p html
+chrome: BROWSER=chrome
+firefox: BROWSER=firefox
+poltergeist: BROWSER=headless
