@@ -1,4 +1,3 @@
-#require 'selenium-webdriver'
 
 Before do
   @buttons = ButtonsPage.new
