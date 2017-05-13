@@ -7,7 +7,8 @@ Given(/^I am on fields panel$/) do
 end
 
 Given(/^I fill the YourFirstName field in with "([^"]*)"$/) do |field|
-  fill_in :placeholder => "YourFirstName", :with => field
+  #fill_in :placeholder => "YourFirstName", :with => field
+  @fields.first_name.set field
 end
 
 #Action

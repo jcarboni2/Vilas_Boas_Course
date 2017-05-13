@@ -8,7 +8,7 @@ end
 
 Given(/^I fill the iYourFirstName with "([^"]*)"$/) do |value|
   within_frame(all('iframe')[1]) do
-    fill_in :placeholder => "YourFirstName", :with => value
+    @ifields.ifirst_name.set value
   end
 end
 
