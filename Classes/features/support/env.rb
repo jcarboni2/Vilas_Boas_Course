@@ -1,10 +1,8 @@
 require 'rspec'
 require 'page-object'
 #This two parameters below load and call a specific gem version.
-#gem 'selenium-webdriver', '=2.53.4'
 gem 'selenium-webdriver', '=3.4.0'
 require 'selenium-webdriver'
-#require 'capybara/cucumber'
 require 'capybara/dsl'
 require 'capybara/rspec/matchers'
 require 'faker'
@@ -18,7 +16,6 @@ World(Capybara::DSL)
 World(Capybara::RSpecMatchers)
 World(Helpers)
 
-Selenium::WebDriver::Firefox::Binary.path='C:\Program Files\Mozilla Firefox\firefox.exe'
 BROWSER = ENV['BROWSER']
 
 if BROWSER.eql?('chrome')
@@ -35,9 +32,6 @@ if BROWSER.eql?('chrome')
     Capybara.default_driver = :ie
     Capybara.register_driver :ie do |app|
       Capybara::Selenium::Driver.new(app, browser: :internet_explorer)
-    #   caps = Selenium::WebDriver::Remote::Capabilities.internet_explorer(
-    # 'ignoreProtectedModeSettings' => true)
-    # driver = Selenium::WebDriver.for(:internet_explorer, :desired_capabilities => caps)
     end
   elsif BROWSER.eql?('headless_debug')
     Capybara.default_driver = :poltergeist_debug
@@ -51,36 +45,5 @@ if BROWSER.eql?('chrome')
   else
     Capybara.default_driver = :selenium
 end
-
-# if ENV['chrome']
-#   Capybara.default_driver = :chrome
-#   Capybara.register_driver :chrome do |app|
-#     Capybara::Selenium::Driver.new(app, browser: :chrome)
-#   end
-# elsif ENV['firefox']
-#   Capybara.default_driver = :firefox
-#   Capybara.register_driver :firefox do |app|
-#     Capybara::Selenium::Driver.new(app, browser: :firefox)
-#   end
-# elsif ENV['ie']
-#   Capybara.default_driver = :ie
-#   Capybara.register_driver :ie do |app|
-#     Capybara::Selenium::Driver.new(app, browser: :internet_explorer)
-#   #   caps = Selenium::WebDriver::Remote::Capabilities.internet_explorer(
-#   # 'ignoreProtectedModeSettings' => true)
-#   # driver = Selenium::WebDriver.for(:internet_explorer, :desired_capabilities => caps)
-#   end
-# elsif ENV['headless_debug']
-#   Capybara.default_driver = :poltergeist_debug
-#   Capybara.register_driver :poltergeist_debug do |app|
-#     Capybara::Poltergeist::Driver.new(app, inspector: true)
-#   end
-#   Capybara.javascript_driver = :poltergeist_debug
-# elsif ENV['headless']
-#   Capybara.javascript_driver = :poltergeist
-#   Capybara.default_driver = :poltergeist
-# else
-#   Capybara.default_driver = :selenium
-# end
 
 Capybara.default_max_wait_time = 5

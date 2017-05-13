@@ -1,9 +1,7 @@
-#default: --no-source --color --format pretty
 
 ## YAML template
 ---
-#pretty: --format pretty
-default: --format progress -p html -p poltergeist
+default: --format progress -p html -p chrome
 html: --format html --out=results/reports.html
 json: --format json --out=results/reports.json
 doc: --format doc
